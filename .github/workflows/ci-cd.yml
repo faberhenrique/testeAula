@@ -27,3 +27,5 @@ jobs:
         run: poetry install --no-root
       - name: Verificar PEP8
         run: poetry run flake8 jogo.py
+      - name: Verificar Lint
+        run: poetry run pylint jogo.py

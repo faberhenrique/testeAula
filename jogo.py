@@ -9,7 +9,7 @@ BRANCO: tuple[int, int, int] = (255, 255, 255)
 AZUL: tuple[int, int, int] = (30, 144, 255)
 
 # Constantes da tela
-LARGURA_TELA = 800
+largura = 800
 ALTURA_TELA = 600
 
 # Propriedades da bola
@@ -32,7 +32,7 @@ class Bola:
         self.x += self.vel_x
         self.y += self.vel_y
 
-        if self.x - RAIO_BOLA <= 0 or self.x + RAIO_BOLA >= LARGURA_TELA:
+        if self.x - RAIO_BOLA <= 0 or self.x + RAIO_BOLA >= largura:
             self.vel_x *= -1
         if self.y - RAIO_BOLA <= 0 or self.y + RAIO_BOLA >= ALTURA_TELA:
             self.vel_y *= -1
@@ -45,10 +45,10 @@ class Bola:
 def iniciar_jogo() -> None:
     """Função principal para inicializar e executar o jogo."""
     pygame.init()  # pylint: disable=no-member
-    tela = pygame.display.set_mode((LARGURA_TELA, ALTURA_TELA))
+    tela = pygame.display.set_mode((largura, ALTURA_TELA))
     pygame.display.set_caption("🏀 Bola Maluca!")
 
-    x_inicial = random.randint(RAIO_BOLA, LARGURA_TELA - RAIO_BOLA)
+    x_inicial = random.randint(RAIO_BOLA, largura - RAIO_BOLA)
     y_inicial = random.randint(RAIO_BOLA, ALTURA_TELA - RAIO_BOLA)
     bola = Bola(
         x_inicial,
