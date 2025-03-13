@@ -22,3 +22,6 @@ jobs:
           key: poetry-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
           restore-keys: |
             poetry-${{ runner.os }}-
+      - name: Instalar dependências
+        run: poetry install 
+      
